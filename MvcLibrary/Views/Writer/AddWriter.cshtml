@@ -1,0 +1,25 @@
+﻿@model MvcLibrary.Models.Entity.tblWriters
+
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazar Ekleme Sayfası</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Yazar Detay</label>
+        @Html.TextAreaFor(x => x.WriterDetail, new { @class = "form-control" })
+    </div>
+    <button style="margin-top:20px" class="btn btn-info">Yazar Ekle</button>
+</form>

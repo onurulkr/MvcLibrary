@@ -1,0 +1,45 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<tblBooks>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kitap Sayfası</h2>
+
+<div style="margin-bottom:15px; margin-top:15px;">
+    <input type="text" class="form-control" placeholder="Kitap Girin..."/>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kitap Id</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Yazarı</th>
+        <th>Kategori</th>
+        <th>Basım Yılı</th>
+        <th>Yayınevi</th>
+        <th>Sayfa</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BookId</td>
+            <td>@item.BookName</td>
+            <td>@item.tblWriters.WriterName @item.tblWriters.WriterSurname</td>
+            <td>@item.tblCategories.CategoryName</td>
+            <td>@item.Year</td>
+            <td>@item.Publisher</td>
+            <td>@item.Page</td>
+            <td>@item.Status</td>
+            <td><a href="/Book/DeleteBook/@item.BookId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Book/GetBook/@item.BookId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Book/AddBook/" class="btn btn-primary">Yeni Kitap Ekle</a>
+

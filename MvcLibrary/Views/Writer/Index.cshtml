@@ -1,0 +1,33 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<tblWriters>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Yazar Id</th>
+        <th>Yazar Adı</th>
+        <th>Yazar Soyadı</th>
+        <th>Detay</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.WriterId</td>
+            <td>@item.WriterName</td>
+            <td>@item.WriterSurname</td>
+            <td>@item.WriterDetail</td>
+            <td>@Html.ActionLink("Sil", "DeleteWriter", new { id = item.WriterId }, new { @class = "btn btn-danger", onclick = "return confirm ('Silmek istiyor musunuz?')" })</td>
+            <td><a href="/Writer/GetWriter/@item.WriterId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Writer/AddWriter/" class="btn btn-primary">Yeni Yazar Ekle</a>
+
