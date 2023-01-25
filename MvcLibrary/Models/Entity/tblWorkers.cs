@@ -11,10 +11,13 @@ namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tblWorkers
     {
         public byte WorkerId { get; set; }
+
+        [Required(ErrorMessage = "Personel Adý Boþ Geçilemez")]
         public string WorkerName { get; set; }
     }
 }

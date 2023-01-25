@@ -31,7 +31,7 @@ namespace MvcLibrary.Controllers
             db.tblCategories.Add(p);
             db.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteCategory(int id)

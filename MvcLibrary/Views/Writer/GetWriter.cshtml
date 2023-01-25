@@ -6,12 +6,12 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2 style="text-align:center;">Yazar Güncelleme Sayfası</h2>
+<h2>Yazar Güncelleme Sayfası</h2>
 
 @using (Html.BeginForm("UpdateWriter", "Writer", FormMethod.Post))
 {
     <div style="margin-top:15px;" class="form-group">
-        <label>Yazar ID</label>
+        <label>Yazar Id</label>
         @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px;" class="form-group">

@@ -1,16 +1,17 @@
-﻿
+﻿@model MvcLibrary.Models.Entity.tblCategories
+
 @{
     ViewBag.Title = "AddCategory";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
+<h2>Kategori Ekleme Sayfası</h2>
+
 <form class="form-group" method="post">
     <div></div>
-    <div style="margin-top:15px">
+    <div style="margin-top:20px">
         <label>Kategori Adı</label>
-        <input type="text" name="CategoryName" class="form-control" />
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
     </div>
-    <div style="margin-top:15px">
-        <button class="btn btn-info" id="Btn1">Kategori Ekle</button>
-    </div>
+    <button style="margin-top:20px" class="btn btn-info">Kategori Ekle</button>
 </form>
