@@ -1,0 +1,45 @@
+﻿@model MvcLibrary.Models.Entity.tblMembers
+
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Üye Ekleme Sayfası</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:20px">
+        <label>Üye Adı</label>
+        @Html.TextBoxFor(x => x.MemberName, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Üye Soyadı</label>
+        @Html.TextBoxFor(x => x.MemberSurname, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Mail</label>
+        @Html.TextBoxFor(x => x.MemberMail, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.MemberUsername, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Şifre</label>
+        @Html.TextBoxFor(x => x.MemberPassword, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Fotoğraf Adresi</label>
+        @Html.TextBoxFor(x => x.MemberImage, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Telefon</label>
+        @Html.TextBoxFor(x => x.MemberPhone, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:20px">
+        <label>Okul</label>
+        @Html.TextBoxFor(x => x.MemberSchool, new { @class = "form-control" })
+    </div>
+    <button style="margin-top:20px" class="btn btn-info">Üye Ekle</button>
+</form>

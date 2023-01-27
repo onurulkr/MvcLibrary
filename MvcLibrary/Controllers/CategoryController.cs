@@ -14,9 +14,9 @@ namespace MvcLibrary.Controllers
 
         public ActionResult Index()
         {
-            var degerler = db.tblCategories.ToList();
+            var values = db.tblCategories.ToList();
 
-            return View(degerler);
+            return View(values);
         }
 
         [HttpGet]

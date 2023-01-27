@@ -11,7 +11,7 @@
 {
     <div style="margin-bottom:15px; margin-top:15px;">
         <b>Aranacak Kitap Adını Girin: &nbsp; </b> @Html.TextBox("p")
-        <input type="submit" value="Ara" class="btn btn-sm"/>
+        <input type="submit" value="Ara" class="btn btn-sm" />
     </div>
 }
 
@@ -33,8 +33,8 @@
         <tr>
             <td>@item.BookId</td>
             <td>@item.BookName</td>
-            <td>@item.tblWriters.WriterName @item.tblWriters.WriterSurname</td>
-            <td>@item.tblCategories.CategoryName</td>
+            <td>@item.Writer</td>
+            <td>@item.Category</td>
             <td>@item.Year</td>
             <td>@item.Publisher</td>
             <td>@item.Page</td>

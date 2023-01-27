@@ -14,9 +14,9 @@ namespace MvcLibrary.Controllers
 
         public ActionResult Index()
         {
-            var degerler = db.tblWorkers.ToList();
+            var values = db.tblWorkers.ToList();
 
-            return View(degerler);
+            return View(values);
         }
 
         [HttpGet]
@@ -34,6 +34,31 @@ namespace MvcLibrary.Controllers
             }
 
             var worker = db.tblWorkers.Add(p);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteWorker(int id)
+        {
+            var worker = db.tblWorkers.Find(id);
+            db.tblWorkers.Remove(worker);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetWorker(int id)
+        {
+            var worker = db.tblWorkers.Find(id);
+
+            return View("GetWorker", worker);
+        }
+
+        public ActionResult UpdateWorker(tblWorkers p)
+        {
+            var worker = db.tblWorkers.Find(p.WorkerId);
+            worker.WorkerName = p.WorkerName;
             db.SaveChanges();
 
             return RedirectToAction("Index");

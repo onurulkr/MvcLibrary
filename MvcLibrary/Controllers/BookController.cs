@@ -19,6 +19,7 @@ namespace MvcLibrary.Controllers
             {
                 books = books.Where(x => x.BookName.Contains(p));
             }
+            
             //var books = db.tblBooks.ToList();
 
             return View(books.ToList());
