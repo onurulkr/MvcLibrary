@@ -19,7 +19,7 @@ namespace MvcLibrary.Controllers
             {
                 books = books.Where(x => x.BookName.Contains(p));
             }
-            
+
             //var books = db.tblBooks.ToList();
 
             return View(books.ToList());
@@ -99,6 +99,7 @@ namespace MvcLibrary.Controllers
             book.Year = p.Year;
             book.Publisher = p.Publisher;
             book.Page = p.Page;
+            book.Status = true;
 
             var ctg = db.tblCategories.Where(x => x.CategoryId == p.tblCategories.CategoryId).FirstOrDefault();
             var writer = db.tblWriters.Where(y => y.WriterId == p.tblWriters.WriterId).FirstOrDefault();

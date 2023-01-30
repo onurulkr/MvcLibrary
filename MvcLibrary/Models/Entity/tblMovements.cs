@@ -23,7 +23,7 @@ namespace MvcLibrary.Models.Entity
         public int MovementId { get; set; }
         public Nullable<int> Book { get; set; }
         public Nullable<int> Member { get; set; }
-        public Nullable<int> Worker { get; set; }
+        public Nullable<byte> Worker { get; set; }
         public Nullable<System.DateTime> PurchaseDate { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
         public Nullable<bool> Status { get; set; }
@@ -32,5 +32,6 @@ namespace MvcLibrary.Models.Entity
         public virtual tblMembers tblMembers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblPunishments> tblPunishments { get; set; }
+        public virtual tblWorkers tblWorkers { get; set; }
     }
 }

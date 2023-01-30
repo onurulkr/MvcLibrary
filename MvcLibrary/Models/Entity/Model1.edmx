@@ -54,7 +54,7 @@
           <Property Name="MovementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Book" Type="int" />
           <Property Name="Member" Type="int" />
-          <Property Name="Worker" Type="int" />
+          <Property Name="Worker" Type="tinyint" />
           <Property Name="PurchaseDate" Type="smalldatetime" />
           <Property Name="ReturnDate" Type="smalldatetime" />
           <Property Name="Status" Type="bit" />
@@ -134,6 +134,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tblMovements_tblWorkers">
+          <End Role="tblWorkers" Type="Self.tblWorkers" Multiplicity="0..1" />
+          <End Role="tblMovements" Type="Self.tblMovements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWorkers">
+              <PropertyRef Name="WorkerId" />
+            </Principal>
+            <Dependent Role="tblMovements">
+              <PropertyRef Name="Worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tblPunishments_tblMembers">
           <End Role="tblMembers" Type="Self.tblMembers" Multiplicity="0..1" />
           <End Role="tblPunishments" Type="Self.tblPunishments" Multiplicity="*" />
@@ -181,6 +193,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_tblMovements_tblMembers" Association="Self.FK_tblMovements_tblMembers">
             <End Role="tblMembers" EntitySet="tblMembers" />
+            <End Role="tblMovements" EntitySet="tblMovements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblMovements_tblWorkers" Association="Self.FK_tblMovements_tblWorkers">
+            <End Role="tblWorkers" EntitySet="tblWorkers" />
             <End Role="tblMovements" EntitySet="tblMovements" />
           </AssociationSet>
           <AssociationSet Name="FK_tblPunishments_tblMembers" Association="Self.FK_tblPunishments_tblMembers">
@@ -251,13 +267,14 @@
           <Property Name="MovementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Book" Type="Int32" />
           <Property Name="Member" Type="Int32" />
-          <Property Name="Worker" Type="Int32" />
+          <Property Name="Worker" Type="Byte" />
           <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
           <Property Name="ReturnDate" Type="DateTime" Precision="0" />
           <Property Name="Status" Type="Boolean" />
           <NavigationProperty Name="tblBooks" Relationship="Self.FK_tblMovements_tblBooks" FromRole="tblMovements" ToRole="tblBooks" />
           <NavigationProperty Name="tblMembers" Relationship="Self.FK_tblMovements_tblMembers" FromRole="tblMovements" ToRole="tblMembers" />
           <NavigationProperty Name="tblPunishments" Relationship="Self.FK_tblPunishments_tblMovements" FromRole="tblMovements" ToRole="tblPunishments" />
+          <NavigationProperty Name="tblWorkers" Relationship="DbLibraryModel.FK_tblMovements_tblWorkers" FromRole="tblMovements" ToRole="tblWorkers" />
         </EntityType>
         <EntityType Name="tblPunishments">
           <Key>
@@ -278,6 +295,7 @@
           </Key>
           <Property Name="WorkerId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblMovements" Relationship="DbLibraryModel.FK_tblMovements_tblWorkers" FromRole="tblWorkers" ToRole="tblMovements" />
         </EntityType>
         <EntityType Name="tblWriters">
           <Key>
@@ -394,7 +412,23 @@
             <End Role="tblMovements" EntitySet="tblMovements" />
             <End Role="tblPunishments" EntitySet="tblPunishments" />
           </AssociationSet>
+          <AssociationSet Name="FK_tblMovements_tblWorkers" Association="DbLibraryModel.FK_tblMovements_tblWorkers">
+            <End Role="tblWorkers" EntitySet="tblWorkers" />
+            <End Role="tblMovements" EntitySet="tblMovements" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_tblMovements_tblWorkers">
+          <End Type="DbLibraryModel.tblWorkers" Role="tblWorkers" Multiplicity="0..1" />
+          <End Type="DbLibraryModel.tblMovements" Role="tblMovements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWorkers">
+              <PropertyRef Name="WorkerId" />
+            </Principal>
+            <Dependent Role="tblMovements">
+              <PropertyRef Name="Worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

@@ -19,6 +19,7 @@
         <AssociationConnector Association="DbLibraryModel.FK_tblMovements_tblMembers" ManuallyRouted="false" />
         <AssociationConnector Association="DbLibraryModel.FK_tblPunishments_tblMembers" ManuallyRouted="false" />
         <AssociationConnector Association="DbLibraryModel.FK_tblPunishments_tblMovements" ManuallyRouted="false" />
+        <AssociationConnector Association="DbLibraryModel.FK_tblMovements_tblWorkers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

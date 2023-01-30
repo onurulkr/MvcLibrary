@@ -10,17 +10,14 @@
     <div></div>
     <div style="margin-top:15px">
         <label>Üye</label>
-        @*@Html.DropDownListFor(x => x.tblMembers.MemberId, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })*@
         @Html.TextBoxFor(x => x.Member, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Kitap</label>
-        @*@Html.DropDownListFor(x => x.tblBooks.BookId, (List<SelectListItem>)ViewBag.vl2, new { @class = "form-control" })*@
         @Html.TextBoxFor(x => x.Book, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Personel</label>
-        @*@Html.DropDownListFor(x => x.Worker, (List<SelectListItem>)ViewBag.vl3, new { @class = "form-control" })*@
         @Html.TextBoxFor(x => x.Worker, new { @class = "form-control" })
     </div>
     <br />
@@ -36,5 +33,3 @@
     <br />
     <button class="btn btn-group" style="background-color:#6624b0; color:white">Kitabı Ödünç Ver</button>
 </form>
-
-@*IEnumerable<SelectListItem>*@

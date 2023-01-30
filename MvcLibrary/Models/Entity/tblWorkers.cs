@@ -14,7 +14,16 @@ namespace MvcLibrary.Models.Entity
     
     public partial class tblWorkers
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblWorkers()
+        {
+            this.tblMovements = new HashSet<tblMovements>();
+        }
+    
         public byte WorkerId { get; set; }
         public string WorkerName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblMovements> tblMovements { get; set; }
     }
 }
