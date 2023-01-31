@@ -1,0 +1,36 @@
+﻿@model MvcLibrary.Models.Entity.tblMovements
+@{
+    ViewBag.Title = "ReturnLoaned";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateLoaned", "Loaned", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label>İşlem Id</label>
+        @Html.TextBoxFor(x => x.MovementId, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.tblBooks.BookName, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(x => x.tblMembers.MemberName, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.TextBoxFor(x => x.tblWorkers.WorkerName, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(x => x.PurchaseDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>İade Edilmesi Gereken Tarih</label>
+        @Html.TextBoxFor(x => x.ReturnDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        <input type="text" value="@DateTime.Now.ToShortDateString()" class="form-control" />
+    </div>
+    <div>
+        <button class="btn btn-warning" style="background-color: #64d8ca; color: white">Ödünç Kitabı Geri Al</button>
+    </div>
+}
+

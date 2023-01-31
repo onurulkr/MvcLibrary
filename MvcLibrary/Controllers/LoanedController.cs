@@ -33,5 +33,12 @@ namespace MvcLibrary.Controllers
 
             return View();
         }
+
+        public ActionResult ReturnLoaned(int id)
+        {
+            var loaned = db.tblMovements.Find(id);
+
+            return View("ReturnLoaned", loaned);
+        }
     }
 }

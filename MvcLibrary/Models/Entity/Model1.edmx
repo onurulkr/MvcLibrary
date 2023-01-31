@@ -110,7 +110,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblMovements_tblBooks">
+        <Association Name="FK_tblMovements_tblBooks1">
           <End Role="tblBooks" Type="Self.tblBooks" Multiplicity="0..1" />
           <End Role="tblMovements" Type="Self.tblMovements" Multiplicity="*" />
           <ReferentialConstraint>
@@ -187,7 +187,7 @@
             <End Role="tblWriters" EntitySet="tblWriters" />
             <End Role="tblBooks" EntitySet="tblBooks" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblMovements_tblBooks" Association="Self.FK_tblMovements_tblBooks">
+          <AssociationSet Name="FK_tblMovements_tblBooks1" Association="Self.FK_tblMovements_tblBooks1">
             <End Role="tblBooks" EntitySet="tblBooks" />
             <End Role="tblMovements" EntitySet="tblMovements" />
           </AssociationSet>

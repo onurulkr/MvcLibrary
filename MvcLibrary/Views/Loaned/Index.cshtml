@@ -26,7 +26,7 @@
             <td>@item.tblWorkers.WorkerName</td>
             <td>@Convert.ToDateTime(item.PurchaseDate).ToString("dd/MM/yyyy")</td>
             <td>@Convert.ToDateTime(item.ReturnDate).ToString("dd/MM/yyyy")</td>
-            <td><a href="/Loaned/ReturnLoaned/@item.tblBooks.BookId" class="btn btn-default" style="background-color:#50d5c1">Kitabı İade Et</a></td>
+            <td><a href="/Loaned/ReturnLoaned/@item.MovementId" class="btn btn-default" style="background-color:#64d8ca">Kitabı İade Et</a></td>
         </tr>
     }
 </table>
