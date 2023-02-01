@@ -14,7 +14,7 @@ namespace MvcLibrary.Controllers
 
         public ActionResult Index()
         {
-            var values = db.tblMovements.ToList();
+            var values = db.tblMovements.Where(x => x.Status == false).ToList();
 
             return View(values);
         }
@@ -39,6 +39,16 @@ namespace MvcLibrary.Controllers
             var loaned = db.tblMovements.Find(id);
 
             return View("ReturnLoaned", loaned);
+        }
+
+        public ActionResult UpdateLoaned(tblMovements p)
+        {
+            var movement = db.tblMovements.Find(p.MovementId);
+            movement.MemberGiveDate = p.MemberGiveDate;
+            movement.Status = true;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

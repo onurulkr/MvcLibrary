@@ -27,6 +27,7 @@ namespace MvcLibrary.Models.Entity
         public Nullable<System.DateTime> PurchaseDate { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
         public Nullable<bool> Status { get; set; }
+        public Nullable<System.DateTime> MemberGiveDate { get; set; }
     
         public virtual tblBooks tblBooks { get; set; }
         public virtual tblMembers tblMembers { get; set; }

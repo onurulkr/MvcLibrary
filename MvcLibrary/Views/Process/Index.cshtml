@@ -1,0 +1,34 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<tblMovements>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>İadesi Alınan Kitap Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>İşlem Id</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>Üye İade Tarihi</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MovementId</td>
+            <td>@item.tblBooks.BookName</td>
+            <td>@item.tblMembers.MemberName @item.tblMembers.MemberSurname</td>
+            <td>@item.tblWorkers.WorkerName</td>
+            <td>@Convert.ToDateTime(item.PurchaseDate).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(item.MemberGiveDate).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Loaned/ReturnLoaned/@item.MovementId" class="btn btn-default" style="background-color:#d882ed">Detaylar</a></td>
+        </tr>
+    }
+</table>
+

@@ -28,6 +28,7 @@ namespace MvcLibrary.Models.Entity
         public string Publisher { get; set; }
         public string Page { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string BookImage { get; set; }
     
         public virtual tblCategories tblCategories { get; set; }
         public virtual tblWriters tblWriters { get; set; }
