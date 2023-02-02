@@ -28,10 +28,15 @@ namespace MvcLibrary.Controllers
         [HttpPost]
         public ActionResult AddWriter(tblWriters p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddWriter");
+            }
+
             db.tblWriters.Add(p);
             db.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteWriter(int id)

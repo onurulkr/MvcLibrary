@@ -11,7 +11,8 @@ namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tblWriters
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,17 @@ namespace MvcLibrary.Models.Entity
         {
             this.tblBooks = new HashSet<tblBooks>();
         }
-    
+
         public int WriterId { get; set; }
+
+        [Required(ErrorMessage = "Yazar Adýný Boþ Geçemezsiniz.")]
         public string WriterName { get; set; }
+
+        [StringLength(20, ErrorMessage = "Soyad 20 Karakterden Uzun Olamaz.")]
         public string WriterSurname { get; set; }
+
         public string WriterDetail { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblBooks> tblBooks { get; set; }
     }
