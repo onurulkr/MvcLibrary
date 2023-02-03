@@ -292,20 +292,11 @@
     <Content Include="statistics\css\jqvmap.css" />
     <Content Include="statistics\css\nav.css" />
     <Content Include="statistics\css\style.css" />
-    <Content Include="statistics\images\ar2.png" />
-    <Content Include="statistics\images\arrows.png" />
-    <Content Include="statistics\images\avatar.jpg" />
-    <Content Include="statistics\images\avatar1.jpg" />
-    <Content Include="statistics\images\avatar2.jpg" />
-    <Content Include="statistics\images\img-sprite.png" />
-    <Content Include="statistics\images\into.png" />
-    <Content Include="statistics\images\into1.png" />
-    <Content Include="statistics\images\logo.png" />
-    <Content Include="statistics\images\pp.jpg" />
-    <Content Include="statistics\images\pp0.jpg" />
-    <Content Include="statistics\images\pp01.jpg" />
-    <Content Include="statistics\images\settings.png" />
-    <Content Include="statistics\images\tick-mark.png" />
+    <Content Include="statistics\images\book1.jpg" />
+    <Content Include="statistics\images\book2.jpg" />
+    <Content Include="statistics\images\book3.jpg" />
+    <Content Include="statistics\images\book4.jpg" />
+    <Content Include="statistics\images\book5.jpg" />
     <Content Include="statistics\index.html" />
     <Content Include="statistics\js\Chart1.js" />
     <Content Include="statistics\js\clndr.js" />
@@ -320,12 +311,6 @@
     <Content Include="statistics\js\moment-2.2.1.js" />
     <Content Include="statistics\js\site.js" />
     <Content Include="statistics\js\underscore-min.js" />
-    <Content Include="statistics\resimler\book1.jpg" />
-    <Content Include="statistics\resimler\book2.jpg" />
-    <Content Include="statistics\resimler\book3.jpg" />
-    <Content Include="statistics\resimler\book4.jpg" />
-    <Content Include="statistics\resimler\book5.jpg" />
-    <Content Include="statistics\resimler\img1.jpg" />
     <Content Include="statistics\w3layouts-License.txt" />
     <Content Include="weather\css\style.css" />
     <Content Include="weather\images\bg.jpg" />
@@ -405,6 +390,8 @@
     <Content Include="showcasePage\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Statistics\Index.cshtml" />
     <Content Include="Views\Statistics\Weather.cshtml" />
+    <Content Include="Views\Statistics\WeatherCard.cshtml" />
+    <Content Include="Views\Statistics\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

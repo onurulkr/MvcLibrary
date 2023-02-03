@@ -37,6 +37,11 @@ namespace MvcLibrary.Controllers
         public ActionResult ReturnLoaned(int id)
         {
             var loaned = db.tblMovements.Find(id);
+            DateTime d1 = DateTime.Parse(loaned.ReturnDate.ToString());
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+
+            ViewBag.value = d3.TotalDays;
 
             return View("ReturnLoaned", loaned);
         }
