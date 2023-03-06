@@ -24,7 +24,7 @@ namespace MvcLibrary.Controllers
         {
             return View();
         }
-
+ 
         public ActionResult Gallery()
         {
             return View();
