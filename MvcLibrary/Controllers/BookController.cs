@@ -105,7 +105,7 @@ namespace MvcLibrary.Controllers
             var writer = db.tblWriters.Where(y => y.WriterId == p.tblWriters.WriterId).FirstOrDefault();
 
             book.Category = ctg.CategoryId;
-            book.Writer = writer.WriterId;
+            book.Writer = writer.WriterId; 
 
             db.SaveChanges();
 
