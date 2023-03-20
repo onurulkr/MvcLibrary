@@ -33,7 +33,7 @@ namespace MvcLibrary.Controllers
 
             return RedirectToAction("Index");
         }
-
+ 
         public ActionResult DeleteCategory(int id)
         {
             var category = db.tblCategories.Find(id);
