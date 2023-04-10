@@ -16,7 +16,7 @@ namespace MvcLibrary.Controllers
         {
             var values = db.tblMovements.Where(x => x.Status == true).ToList();
 
-            return View(values);
+            return View(values); 
         }
     }
 } 
